@@ -1,19 +1,19 @@
 # Industrial IoT Motor Monitoring and Control System
 
 ## Overview
-This project implements an Industrial Internet of Things (IIoT) motor monitoring and control system using a simulated electric motor, an edge gateway, MQTT communication, and the ThingsBoard IoT platform.
+This project implements an Industrial Internet of Things (IIoT) motor monitoring and control system using Python, MQTT, Docker, and ThingsBoard. It demonstrates real-time telemetry, edge processing, automatic cooling control, fault detection, and interactive dashboard visualization.
 
 ## Features
 - Real-time motor process simulation
-- MQTT communication
-- Edge-side processing and automatic cooling
-- Five-second aggregation during normal operation
-- One-second reporting during critical events
+- MQTT-based communication
+- Edge-side analytics and decision making
+- Automatic fan control
+- Manual fan RPM control through ThingsBoard RPC
+- Five-second telemetry aggregation
+- One-second emergency reporting
 - Fan failure and overload simulation
-- Thermal hard-trip protection and recovery
-- Manual fan RPM control via RPC
-- Emergency stop and restart
-- ThingsBoard dashboard
+- Thermal hard-trip protection
+- Interactive ThingsBoard dashboard
 
 ## System Architecture
 ```text
@@ -33,34 +33,56 @@ Motor Simulator
 industrial-iot/
 ├── edge_gateway.py
 ├── motor_simulator.py
-├── mqtt_topics.py
+├── config.py
 ├── requirements.txt
-├── docker-compose.yml
-├── thingsboard/
-├── dashboards/
-└── tests/
+├── .env
+├── industrial_iot_motor_control_center_v8.json
+├── industrial_iot_motor_control_center_v9_fixed.json
+├── manual_fan_rpm_control_widget.json
+├── README.md
+├── README_MANUAL_RPM_FIX.md
+├── README_RUN_WINDOWS.txt
+└── test_logic.py
 ```
 
 ## Requirements
 - Python 3.10+
-- Docker & Docker Compose
-- ThingsBoard CE
+- Docker and Docker Compose
+- ThingsBoard Community Edition
 - PostgreSQL
-- Eclipse Mosquitto
+- MQTT Broker (Mosquitto or ThingsBoard built-in broker)
 
 ## Installation
-```bash
-git clone <repository-url>
-cd <repository>
-python -m venv .venv
-source .venv/bin/activate      # Linux/WSL
-# or
-.venv\Scripts\activate       # Windows
 
+1. Clone the repository.
+2. Install the Python dependencies:
+
+```bash
 pip install -r requirements.txt
+```
+
+3. Start ThingsBoard using Docker.
+
+```bash
 docker-compose up -d
+```
+
+4. Run the simulator.
+
+```bash
 python motor_simulator.py
+```
+
+5. Run the edge gateway.
+
+```bash
 python edge_gateway.py
+```
+
+6. Open ThingsBoard at:
+
+```
+http://localhost:8080
 ```
 
 Open **http://localhost:8080**
