@@ -1,0 +1,2652 @@
+{
+  "title": "Industrial IoT Motor Control Center v9 (Fixed)",
+  "name": "Industrial IoT Motor Control Center v9 (Fixed)",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "v8: fixed main gauges by removing duplicate units and min/max clutter; manual fan control changed to slider. Trend charts are unchanged.",
+    "widgets": {
+      "0e92609a-90ed-4107-b0ae-e2a8f228e075": {
+        "type": "static",
+        "sizeX": 24,
+        "sizeY": 3,
+        "config": {
+          "datasources": [],
+          "showTitle": false,
+          "backgroundColor": "#020617",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "cardHtml": "\n<div style='height:100%; padding:20px 28px; box-sizing:border-box; color:white; font-family:Roboto,Arial,sans-serif; background:linear-gradient(135deg,#020617 0%,#0f172a 45%,#1e3a8a 100%); border-radius:0;'>\n  <div style='font-size:28px; font-weight:800; letter-spacing:0.04em;'>INDUSTRIAL IoT MOTOR CONTROL CENTER</div>\n  <div style='margin-top:8px; font-size:14px; color:#cbd5e1;'>Edge processing \u2022 MQTT \u2022 ThingsBoard \u2022 bidirectional control \u2022 overload and cooling-failure protection</div>\n  <div style='margin-top:12px; display:flex; gap:12px; flex-wrap:wrap; font-size:12px;'>\n    <span style='background:#064e3b; padding:6px 10px; border-radius:999px;'>70\u00b0C Edge Cooling</span>\n    <span style='background:#7c2d12; padding:6px 10px; border-radius:999px;'>85\u00b0C Alert Mode</span>\n    <span style='background:#7f1d1d; padding:6px 10px; border-radius:999px;'>95\u00b0C Hard Trip</span>\n    <span style='background:#1e40af; padding:6px 10px; border-radius:999px;'>Normal upload: 5s avg</span>\n    <span style='background:#991b1b; padding:6px 10px; border-radius:999px;'>Alert upload: 1s</span>\n  </div>\n</div>\n",
+            "cardCss": ""
+          },
+          "title": "Header",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "showLegend": false,
+          "actions": {}
+        },
+        "row": 0,
+        "col": 0,
+        "id": "0e92609a-90ed-4107-b0ae-e2a8f228e075",
+        "typeFullFqn": "system.cards.html_card"
+      },
+      "2d7f18b9-57a2-440f-9894-9bfa25d17b06": {
+        "type": "latest",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "edge_state",
+                  "type": "timeseries",
+                  "label": "EDGE STATE",
+                  "color": "#2196f3",
+                  "settings": {}
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#1e3a8a",
+          "color": "#ffffff",
+          "padding": "14px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "EDGE STATE",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": null,
+          "units": null
+        },
+        "row": 3,
+        "col": 0,
+        "id": "2d7f18b9-57a2-440f-9894-9bfa25d17b06",
+        "typeFullFqn": "system.cards.simple_card"
+      },
+      "19a4b8c7-6ab0-441e-b938-947dcef48b6a": {
+        "type": "latest",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "active_alarm",
+                  "type": "timeseries",
+                  "label": "ACTIVE ALARM",
+                  "color": "#2196f3",
+                  "settings": {}
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#7f1d1d",
+          "color": "#ffffff",
+          "padding": "14px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "ACTIVE ALARM",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": null,
+          "units": null
+        },
+        "row": 3,
+        "col": 6,
+        "id": "19a4b8c7-6ab0-441e-b938-947dcef48b6a",
+        "typeFullFqn": "system.cards.simple_card"
+      },
+      "65876d7a-0fbd-4a82-afaf-a66c7feb063d": {
+        "type": "latest",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "motor_running",
+                  "type": "timeseries",
+                  "label": "MOTOR RUNNING",
+                  "color": "#2196f3",
+                  "settings": {}
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#064e3b",
+          "color": "#ffffff",
+          "padding": "14px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "MOTOR RUNNING",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": null,
+          "units": null
+        },
+        "row": 3,
+        "col": 12,
+        "id": "65876d7a-0fbd-4a82-afaf-a66c7feb063d",
+        "typeFullFqn": "system.cards.simple_card"
+      },
+      "48a9ee66-dde3-42f2-8d18-511550054fcf": {
+        "type": "latest",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "manual_mode",
+                  "type": "timeseries",
+                  "label": "CONTROL MODE",
+                  "color": "#2196f3",
+                  "settings": {}
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#7c3aed",
+          "color": "#ffffff",
+          "padding": "14px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "CONTROL MODE",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": null,
+          "units": null
+        },
+        "row": 3,
+        "col": 18,
+        "id": "48a9ee66-dde3-42f2-8d18-511550054fcf",
+        "typeFullFqn": "system.cards.simple_card"
+      },
+      "aaa09a38-08b0-4064-ba0d-acbf5e2225d3": {
+        "type": "latest",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "health_score",
+                  "type": "timeseries",
+                  "label": "HEALTH SCORE",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "units": "%",
+                  "decimals": 1
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#0f766e",
+          "color": "#ffffff",
+          "padding": "14px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "HEALTH SCORE",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": 1,
+          "units": "%"
+        },
+        "row": 6,
+        "col": 0,
+        "id": "aaa09a38-08b0-4064-ba0d-acbf5e2225d3",
+        "typeFullFqn": "system.cards.simple_card"
+      },
+      "44b6d437-24c7-4770-828c-ea7a7b2d92f4": {
+        "type": "latest",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "traffic_saving_percent",
+                  "type": "timeseries",
+                  "label": "EDGE TRAFFIC SAVED",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "units": "%",
+                  "decimals": 1
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#0e7490",
+          "color": "#ffffff",
+          "padding": "14px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "EDGE TRAFFIC SAVED",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": 1,
+          "units": "%"
+        },
+        "row": 6,
+        "col": 6,
+        "id": "44b6d437-24c7-4770-828c-ea7a7b2d92f4",
+        "typeFullFqn": "system.cards.simple_card"
+      },
+      "e53fecbe-0f39-4d9e-9040-53919cba0b25": {
+        "type": "latest",
+        "sizeX": 8,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "temperature_latest",
+                  "type": "timeseries",
+                  "label": "MOTOR TEMPERATURE",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "units": "\u00b0C",
+                  "decimals": 1
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#020617",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "maxValue": 110,
+            "minValue": 20,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": false,
+            "gaugeWidthScale": 1,
+            "levelColors": [
+              "#10b981",
+              "#f59e0b",
+              "#ef4444",
+              "#7f1d1d"
+            ],
+            "refreshAnimationType": "<>",
+            "refreshAnimationTime": 700,
+            "startAnimationType": "<>",
+            "startAnimationTime": 700,
+            "titleFont": {
+              "family": "Roboto",
+              "size": 14,
+              "style": "normal",
+              "weight": "600"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 10,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto Mono",
+              "style": "normal",
+              "weight": "600",
+              "size": 16
+            },
+            "minMaxFont": {
+              "family": "Roboto Mono",
+              "size": 0,
+              "style": "normal",
+              "weight": "normal",
+              "color": "rgba(0,0,0,0)"
+            },
+            "dashThickness": 1.2,
+            "decimals": 1,
+            "units": "\u00b0C",
+            "gaugeColor": "#111827",
+            "neonGlowBrightness": 28,
+            "gaugeType": "donut",
+            "showTitle": false,
+            "showUnitTitle": false,
+            "unitTitle": ""
+          },
+          "title": "MOTOR TEMPERATURE",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true
+        },
+        "row": 9,
+        "col": 0,
+        "id": "e53fecbe-0f39-4d9e-9040-53919cba0b25",
+        "typeFullFqn": "system.digital_gauges.digital_thermometer"
+      },
+      "78223352-b86c-4ddf-8a89-be33f2bdab4a": {
+        "type": "latest",
+        "sizeX": 8,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "fan_rpm_latest",
+                  "type": "timeseries",
+                  "label": "FAN SPEED",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "units": "RPM",
+                  "decimals": 0
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#020617",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "maxValue": 3200,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": false,
+            "gaugeWidthScale": 1,
+            "levelColors": [
+              "#ef4444",
+              "#f59e0b",
+              "#10b981"
+            ],
+            "refreshAnimationType": "<>",
+            "refreshAnimationTime": 700,
+            "startAnimationType": "<>",
+            "startAnimationTime": 700,
+            "titleFont": {
+              "family": "Roboto",
+              "size": 14,
+              "style": "normal",
+              "weight": "600"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 10,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto Mono",
+              "style": "normal",
+              "weight": "600",
+              "size": 14
+            },
+            "minMaxFont": {
+              "family": "Roboto Mono",
+              "size": 0,
+              "style": "normal",
+              "weight": "normal",
+              "color": "rgba(0,0,0,0)"
+            },
+            "dashThickness": 1.2,
+            "decimals": 0,
+            "units": "RPM",
+            "gaugeColor": "#111827",
+            "neonGlowBrightness": 28,
+            "gaugeType": "donut",
+            "showTitle": false,
+            "showUnitTitle": false,
+            "unitTitle": ""
+          },
+          "title": "FAN SPEED",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true
+        },
+        "row": 9,
+        "col": 8,
+        "id": "78223352-b86c-4ddf-8a89-be33f2bdab4a",
+        "typeFullFqn": "system.digital_gauges.digital_thermometer"
+      },
+      "e870a1d6-a106-490f-8ec5-99eff846b9e8": {
+        "type": "latest",
+        "sizeX": 8,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "load_latest",
+                  "type": "timeseries",
+                  "label": "MOTOR LOAD",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "units": "%",
+                  "decimals": 1
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#020617",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "maxValue": 135,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": false,
+            "gaugeWidthScale": 1.1,
+            "levelColors": [
+              "#10b981",
+              "#f59e0b",
+              "#ef4444"
+            ],
+            "refreshAnimationType": "<>",
+            "refreshAnimationTime": 700,
+            "startAnimationType": "<>",
+            "startAnimationTime": 700,
+            "titleFont": {
+              "family": "Roboto",
+              "size": 14,
+              "style": "normal",
+              "weight": "600"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 10,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto Mono",
+              "style": "normal",
+              "weight": "600",
+              "size": 16
+            },
+            "minMaxFont": {
+              "family": "Roboto Mono",
+              "size": 0,
+              "style": "normal",
+              "weight": "normal",
+              "color": "rgba(0,0,0,0)"
+            },
+            "dashThickness": 1.2,
+            "decimals": 1,
+            "units": "%",
+            "gaugeColor": "#111827",
+            "neonGlowBrightness": 28,
+            "gaugeType": "verticalBar",
+            "showTitle": false,
+            "showUnitTitle": false,
+            "unitTitle": ""
+          },
+          "title": "MOTOR LOAD",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true
+        },
+        "row": 9,
+        "col": 16,
+        "id": "e870a1d6-a106-490f-8ec5-99eff846b9e8",
+        "typeFullFqn": "system.digital_gauges.digital_vertical_bar"
+      },
+      "67459251-e541-45f1-ad48-52d3a2bfd16e": {
+        "type": "latest",
+        "sizeX": 8,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "power_kw",
+                  "type": "timeseries",
+                  "label": "POWER",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "units": "kW",
+                  "decimals": 1
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#020617",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "maxValue": 35,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": false,
+            "gaugeWidthScale": 1.1,
+            "levelColors": [
+              "#3b82f6",
+              "#f59e0b",
+              "#ef4444"
+            ],
+            "refreshAnimationType": "<>",
+            "refreshAnimationTime": 700,
+            "startAnimationType": "<>",
+            "startAnimationTime": 700,
+            "titleFont": {
+              "family": "Roboto",
+              "size": 14,
+              "style": "normal",
+              "weight": "600"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 10,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto Mono",
+              "style": "normal",
+              "weight": "600",
+              "size": 16
+            },
+            "minMaxFont": {
+              "family": "Roboto Mono",
+              "size": 0,
+              "style": "normal",
+              "weight": "normal",
+              "color": "rgba(0,0,0,0)"
+            },
+            "dashThickness": 1.2,
+            "decimals": 1,
+            "units": "kW",
+            "gaugeColor": "#111827",
+            "neonGlowBrightness": 28,
+            "gaugeType": "verticalBar",
+            "showTitle": false,
+            "showUnitTitle": false,
+            "unitTitle": ""
+          },
+          "title": "POWER",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true
+        },
+        "row": 17,
+        "col": 0,
+        "id": "67459251-e541-45f1-ad48-52d3a2bfd16e",
+        "typeFullFqn": "system.digital_gauges.digital_vertical_bar"
+      },
+      "7995d232-1a53-4d49-9246-189ecb892e49": {
+        "type": "latest",
+        "sizeX": 8,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "vibration_mm_s",
+                  "type": "timeseries",
+                  "label": "VIBRATION",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "units": "mm/s",
+                  "decimals": 2
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#020617",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "maxValue": 14,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": false,
+            "gaugeWidthScale": 1.1,
+            "levelColors": [
+              "#10b981",
+              "#f59e0b",
+              "#ef4444"
+            ],
+            "refreshAnimationType": "<>",
+            "refreshAnimationTime": 700,
+            "startAnimationType": "<>",
+            "startAnimationTime": 700,
+            "titleFont": {
+              "family": "Roboto",
+              "size": 14,
+              "style": "normal",
+              "weight": "600"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 10,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Roboto Mono",
+              "style": "normal",
+              "weight": "600",
+              "size": 14
+            },
+            "minMaxFont": {
+              "family": "Roboto Mono",
+              "size": 0,
+              "style": "normal",
+              "weight": "normal",
+              "color": "rgba(0,0,0,0)"
+            },
+            "dashThickness": 1.2,
+            "decimals": 2,
+            "units": "mm/s",
+            "gaugeColor": "#111827",
+            "neonGlowBrightness": 28,
+            "gaugeType": "verticalBar",
+            "showTitle": false,
+            "showUnitTitle": false,
+            "unitTitle": ""
+          },
+          "title": "VIBRATION",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true
+        },
+        "row": 17,
+        "col": 8,
+        "id": "7995d232-1a53-4d49-9246-189ecb892e49",
+        "typeFullFqn": "system.digital_gauges.digital_vertical_bar"
+      },
+      "375bb360-6818-4fdb-8d01-58879ba8fdc3": {
+        "type": "timeseries",
+        "sizeX": 12,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "temperature_latest",
+                  "type": "timeseries",
+                  "label": "Temperature \u00b0C",
+                  "color": "#ef4444",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false
+                  },
+                  "units": "\u00b0C",
+                  "decimals": 1
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0,0,0,0.87)",
+          "padding": "10px",
+          "settings": {
+            "stack": false,
+            "showTooltip": true,
+            "showLegend": false,
+            "legendConfig": {
+              "direction": "column",
+              "position": "bottom"
+            },
+            "showLines": true,
+            "fillLines": false,
+            "showPoints": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showLatest": true
+          },
+          "title": "TEMPERATURE TREND: 70\u00b0C / 85\u00b0C / 95\u00b0C thresholds",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "useDashboardTimewindow": true,
+          "actions": {},
+          "enableDataExport": true
+        },
+        "row": 25,
+        "col": 0,
+        "id": "375bb360-6818-4fdb-8d01-58879ba8fdc3",
+        "typeFullFqn": "system.charts.basic_timeseries"
+      },
+      "7ce06afb-3528-4c2c-8f0b-2867e27a6046": {
+        "type": "timeseries",
+        "sizeX": 12,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "fan_rpm_latest",
+                  "type": "timeseries",
+                  "label": "Fan RPM",
+                  "color": "#3b82f6",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false
+                  },
+                  "units": "RPM",
+                  "decimals": 0
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0,0,0,0.87)",
+          "padding": "10px",
+          "settings": {
+            "stack": false,
+            "showTooltip": true,
+            "showLegend": false,
+            "legendConfig": {
+              "direction": "column",
+              "position": "bottom"
+            },
+            "showLines": true,
+            "fillLines": false,
+            "showPoints": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showLatest": true
+          },
+          "title": "FAN RPM TREND",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "useDashboardTimewindow": true,
+          "actions": {},
+          "enableDataExport": true
+        },
+        "row": 25,
+        "col": 12,
+        "id": "7ce06afb-3528-4c2c-8f0b-2867e27a6046",
+        "typeFullFqn": "system.charts.basic_timeseries"
+      },
+      "66d7659b-2448-471c-af61-f186ca1866dd": {
+        "type": "timeseries",
+        "sizeX": 12,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "load_latest",
+                  "type": "timeseries",
+                  "label": "Load %",
+                  "color": "#f59e0b",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false
+                  },
+                  "units": "%",
+                  "decimals": 1
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0,0,0,0.87)",
+          "padding": "10px",
+          "settings": {
+            "stack": false,
+            "showTooltip": true,
+            "showLegend": false,
+            "legendConfig": {
+              "direction": "column",
+              "position": "bottom"
+            },
+            "showLines": true,
+            "fillLines": false,
+            "showPoints": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showLatest": true
+          },
+          "title": "LOAD TREND",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "useDashboardTimewindow": true,
+          "actions": {},
+          "enableDataExport": true
+        },
+        "row": 33,
+        "col": 0,
+        "id": "66d7659b-2448-471c-af61-f186ca1866dd",
+        "typeFullFqn": "system.charts.basic_timeseries"
+      },
+      "c94fd9d5-70d5-4975-acb8-75d9bb213378": {
+        "type": "timeseries",
+        "sizeX": 12,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "power_kw",
+                  "type": "timeseries",
+                  "label": "Power kW",
+                  "color": "#22c55e",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false
+                  },
+                  "units": "kW",
+                  "decimals": 1
+                },
+                {
+                  "name": "vibration_mm_s",
+                  "type": "timeseries",
+                  "label": "Vibration mm/s",
+                  "color": "#a855f7",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false
+                  },
+                  "units": "mm/s",
+                  "decimals": 2
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0,0,0,0.87)",
+          "padding": "10px",
+          "settings": {
+            "stack": false,
+            "showTooltip": true,
+            "showLegend": false,
+            "legendConfig": {
+              "direction": "column",
+              "position": "bottom"
+            },
+            "showLines": true,
+            "fillLines": false,
+            "showPoints": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showLatest": true
+          },
+          "title": "POWER & VIBRATION TREND",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "useDashboardTimewindow": true,
+          "actions": {},
+          "enableDataExport": true
+        },
+        "row": 33,
+        "col": 12,
+        "id": "c94fd9d5-70d5-4975-acb8-75d9bb213378",
+        "typeFullFqn": "system.charts.basic_timeseries"
+      },
+      "8c223646-25dc-4825-9b15-398f1e4e9e0f": {
+        "type": "timeseries",
+        "sizeX": 24,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "thermal_risk_index",
+                  "type": "timeseries",
+                  "label": "Thermal Risk %",
+                  "color": "#dc2626",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false
+                  },
+                  "units": "%",
+                  "decimals": 1
+                },
+                {
+                  "name": "temperature_rate_c_per_s",
+                  "type": "timeseries",
+                  "label": "Temp rate \u00b0C/s",
+                  "color": "#0ea5e9",
+                  "settings": {
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false
+                  },
+                  "units": "\u00b0C/s",
+                  "decimals": 3
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0,0,0,0.87)",
+          "padding": "10px",
+          "settings": {
+            "stack": false,
+            "showTooltip": true,
+            "showLegend": false,
+            "legendConfig": {
+              "direction": "column",
+              "position": "bottom"
+            },
+            "showLines": true,
+            "fillLines": false,
+            "showPoints": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showLatest": true
+          },
+          "title": "THERMAL RISK & TEMP RATE",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "useDashboardTimewindow": true,
+          "actions": {},
+          "enableDataExport": true
+        },
+        "row": 41,
+        "col": 0,
+        "id": "8c223646-25dc-4825-9b15-398f1e4e9e0f",
+        "typeFullFqn": "system.charts.basic_timeseries"
+      },
+      "bbbacc79-d5ea-4416-ac72-cd014d06c8c1": {
+        "type": "latest",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "alarm_motor_overload",
+                  "type": "timeseries",
+                  "label": "MOTOR OVERLOAD",
+                  "color": "#2196f3",
+                  "settings": {}
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#7f1d1d",
+          "color": "#ffffff",
+          "padding": "14px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "MOTOR OVERLOAD",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": null,
+          "units": null
+        },
+        "row": 49,
+        "col": 0,
+        "id": "bbbacc79-d5ea-4416-ac72-cd014d06c8c1",
+        "typeFullFqn": "system.cards.simple_card"
+      },
+      "e704b06c-2d18-480a-b371-a7c344ac9b7d": {
+        "type": "latest",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "alarm_cooling_failed",
+                  "type": "timeseries",
+                  "label": "COOLING FAILED",
+                  "color": "#2196f3",
+                  "settings": {}
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#7f1d1d",
+          "color": "#ffffff",
+          "padding": "14px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "COOLING FAILED",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": null,
+          "units": null
+        },
+        "row": 49,
+        "col": 6,
+        "id": "e704b06c-2d18-480a-b371-a7c344ac9b7d",
+        "typeFullFqn": "system.cards.simple_card"
+      },
+      "b8b9112a-2a0b-479a-afa3-f8f2cdd24ea2": {
+        "type": "latest",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "alarm_critical_temperature",
+                  "type": "timeseries",
+                  "label": "CRITICAL TEMP",
+                  "color": "#2196f3",
+                  "settings": {}
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#b45309",
+          "color": "#ffffff",
+          "padding": "14px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "CRITICAL TEMP",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": null,
+          "units": null
+        },
+        "row": 49,
+        "col": 12,
+        "id": "b8b9112a-2a0b-479a-afa3-f8f2cdd24ea2",
+        "typeFullFqn": "system.cards.simple_card"
+      },
+      "dec9a7e0-5262-4857-bd06-9e112b4a8100": {
+        "type": "latest",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "alarm_hard_trip",
+                  "type": "timeseries",
+                  "label": "EDGE HARD TRIP",
+                  "color": "#2196f3",
+                  "settings": {}
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#991b1b",
+          "color": "#ffffff",
+          "padding": "14px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "EDGE HARD TRIP",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": null,
+          "units": null
+        },
+        "row": 49,
+        "col": 18,
+        "id": "dec9a7e0-5262-4857-bd06-9e112b4a8100",
+        "typeFullFqn": "system.cards.simple_card"
+      },
+      "a0884a37-6f86-4933-baf7-34cfaa2fcaa8": {
+        "type": "latest",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "data_stale",
+                  "type": "timeseries",
+                  "label": "DATA STALE",
+                  "color": "#2196f3",
+                  "settings": {}
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#334155",
+          "color": "#ffffff",
+          "padding": "14px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "DATA STALE",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": null,
+          "units": null
+        },
+        "row": 6,
+        "col": 18,
+        "id": "a0884a37-6f86-4933-baf7-34cfaa2fcaa8",
+        "typeFullFqn": "system.cards.simple_card"
+      },
+      "1cc03663-4d29-4b5d-9ce4-d6bf8a2f1f60": {
+        "type": "latest",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "overload_level",
+                  "type": "timeseries",
+                  "label": "OVERLOAD LEVEL",
+                  "color": "#2196f3",
+                  "settings": {}
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "#4338ca",
+          "color": "#ffffff",
+          "padding": "14px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "OVERLOAD LEVEL",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "18px",
+            "fontWeight": 700
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true,
+          "decimals": null,
+          "units": null
+        },
+        "row": 6,
+        "col": 12,
+        "id": "1cc03663-4d29-4b5d-9ce4-d6bf8a2f1f60",
+        "typeFullFqn": "system.cards.simple_card"
+      },
+      "c7bff6ca-6af4-4e93-9640-6c02cf7ebf86": {
+        "type": "latest",
+        "sizeX": 8,
+        "sizeY": 8,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "11111111-1111-1111-1111-111111111111",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "temperature_latest",
+                  "type": "timeseries",
+                  "label": "Temperature",
+                  "color": "#ef4444",
+                  "settings": {},
+                  "units": "\u00b0C",
+                  "decimals": 1
+                },
+                {
+                  "name": "temperature_rate_c_per_s",
+                  "type": "timeseries",
+                  "label": "Temp rise rate",
+                  "color": "#0ea5e9",
+                  "settings": {},
+                  "units": "\u00b0C/s",
+                  "decimals": 3
+                },
+                {
+                  "name": "fan_rpm_latest",
+                  "type": "timeseries",
+                  "label": "Fan RPM",
+                  "color": "#3b82f6",
+                  "settings": {},
+                  "units": "RPM",
+                  "decimals": 0
+                },
+                {
+                  "name": "load_latest",
+                  "type": "timeseries",
+                  "label": "Load",
+                  "color": "#f59e0b",
+                  "settings": {},
+                  "units": "%",
+                  "decimals": 1
+                },
+                {
+                  "name": "current_a",
+                  "type": "timeseries",
+                  "label": "Current",
+                  "color": "#22c55e",
+                  "settings": {},
+                  "units": "A",
+                  "decimals": 1
+                },
+                {
+                  "name": "power_kw",
+                  "type": "timeseries",
+                  "label": "Power",
+                  "color": "#22c55e",
+                  "settings": {},
+                  "units": "kW",
+                  "decimals": 1
+                },
+                {
+                  "name": "energy_kwh",
+                  "type": "timeseries",
+                  "label": "Energy",
+                  "color": "#14b8a6",
+                  "settings": {},
+                  "units": "kWh",
+                  "decimals": 3
+                },
+                {
+                  "name": "health_score",
+                  "type": "timeseries",
+                  "label": "Health",
+                  "color": "#10b981",
+                  "settings": {},
+                  "units": "%",
+                  "decimals": 1
+                },
+                {
+                  "name": "thermal_risk_index",
+                  "type": "timeseries",
+                  "label": "Thermal risk",
+                  "color": "#ef4444",
+                  "settings": {},
+                  "units": "%",
+                  "decimals": 1
+                },
+                {
+                  "name": "edge_state",
+                  "type": "timeseries",
+                  "label": "Edge state",
+                  "color": "#60a5fa",
+                  "settings": {}
+                },
+                {
+                  "name": "active_alarm",
+                  "type": "timeseries",
+                  "label": "Active alarm",
+                  "color": "#ef4444",
+                  "settings": {}
+                },
+                {
+                  "name": "sim_fault_mode",
+                  "type": "timeseries",
+                  "label": "Sim fault",
+                  "color": "#f97316",
+                  "settings": {}
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": true,
+          "backgroundColor": "#0b1220",
+          "color": "rgba(255,255,255,0.9)",
+          "padding": "8px",
+          "settings": {},
+          "title": "LIVE PROCESS VALUES",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": true
+        },
+        "row": 17,
+        "col": 16,
+        "id": "c7bff6ca-6af4-4e93-9640-6c02cf7ebf86",
+        "typeFullFqn": "system.cards.attributes_card"
+      },
+      "96e066c3-6119-4f5d-9ba7-4684c5133952": {
+        "type": "static",
+        "sizeX": 24,
+        "sizeY": 4,
+        "config": {
+          "datasources": [],
+          "showTitle": false,
+          "backgroundColor": "#020617",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "cardHtml": "\n<div style='height:100%; padding:16px; box-sizing:border-box; background:#0f172a; color:white; font-family:Roboto,Arial,sans-serif; border-radius:14px;'>\n  <div style='font-size:18px; font-weight:800; margin-bottom:10px;'>CONTROL PANEL GUIDE</div>\n  <div style='font-size:13px; line-height:1.7; color:#cbd5e1;'>\n    <b>Emergency Stop</b>: stops motor and forces max fan.<br/>\n    <b>Reset System</b>: clears emergency/hard trip and restarts safe mode.<br/>\n    <b>Manual Mode</b>: disables automatic fan control.<br/>\n    <b>Manual Fan RPM</b>: use the stepper to change fan speed by 100 RPM.<br/>\n    <b>Fault Injection</b>: overload and fan failure are for lab testing.\n  </div>\n</div>\n",
+            "cardCss": ""
+          },
+          "title": "Control Help",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "showLegend": false,
+          "actions": {}
+        },
+        "row": 52,
+        "col": 0,
+        "id": "96e066c3-6119-4f5d-9ba7-4684c5133952",
+        "typeFullFqn": "system.cards.html_card"
+      },
+      "b461c660-f51e-46c6-8cb9-59594fac0d9d": {
+        "type": "rpc",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#7f1d1d",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "buttonText": "EMERGENCY STOP",
+            "oneWayElseTwoWay": false,
+            "methodName": "emergencyStop",
+            "methodParams": "true",
+            "requestTimeout": 5000,
+            "showError": true,
+            "requestPersistent": false,
+            "persistentPollingInterval": 1000,
+            "styleButton": {
+              "isRaised": true,
+              "isPrimary": false
+            }
+          },
+          "title": "EMERGENCY STOP",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "showLegend": false,
+          "actions": {},
+          "datasources": [],
+          "targetDevice": {
+            "type": "entity",
+            "entityAliasId": "11111111-1111-1111-1111-111111111111"
+          }
+        },
+        "row": 56,
+        "col": 0,
+        "id": "b461c660-f51e-46c6-8cb9-59594fac0d9d",
+        "typeFullFqn": "system.control_widgets.rpcbutton"
+      },
+      "a3b84359-97a9-4a9b-b22b-95843c2a2648": {
+        "type": "rpc",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#1d4ed8",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "buttonText": "RESET SYSTEM",
+            "oneWayElseTwoWay": false,
+            "methodName": "resetEmergency",
+            "methodParams": "true",
+            "requestTimeout": 5000,
+            "showError": true,
+            "requestPersistent": false,
+            "persistentPollingInterval": 1000,
+            "styleButton": {
+              "isRaised": true,
+              "isPrimary": false
+            }
+          },
+          "title": "RESET SYSTEM",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "showLegend": false,
+          "actions": {},
+          "datasources": [],
+          "targetDevice": {
+            "type": "entity",
+            "entityAliasId": "11111111-1111-1111-1111-111111111111"
+          }
+        },
+        "row": 56,
+        "col": 6,
+        "id": "a3b84359-97a9-4a9b-b22b-95843c2a2648",
+        "typeFullFqn": "system.control_widgets.rpcbutton"
+      },
+      "e1f6ed5d-a791-4b5e-ad71-347a64c794d0": {
+        "type": "rpc",
+        "sizeX": 8,
+        "sizeY": 3,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#0f172a",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "requestTimeout": 5000,
+            "initialValue": false,
+            "setValueMethod": "setManualMode",
+            "showOnOffLabels": true,
+            "title": "MANUAL MODE",
+            "retrieveValueMethod": "rpc",
+            "valueKey": "state",
+            "parseValueFunction": "return data && data.state ? data.state.manual_mode === true : false;",
+            "getValueMethod": "getState",
+            "convertValueFunction": "return value ? true : false;"
+          },
+          "title": "Manual Mode Switch",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "showLegend": false,
+          "actions": {},
+          "decimals": 0,
+          "datasources": [],
+          "targetDevice": {
+            "type": "entity",
+            "entityAliasId": "11111111-1111-1111-1111-111111111111"
+          }
+        },
+        "row": 59,
+        "col": 0,
+        "id": "e1f6ed5d-a791-4b5e-ad71-347a64c794d0",
+        "typeFullFqn": "system.control_widgets.switch_control"
+      },
+      "5f6f5ec9-5f58-4c85-82cb-50352339e969": {
+        "type": "rpc",
+        "sizeX": 16,
+        "sizeY": 4,
+        "config": {
+          "showTitle": true,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0,0,0,0.87)",
+          "padding": "12px",
+          "settings": {
+            "requestTimeout": 5000,
+            "title": "MANUAL FAN RPM",
+            "initialValue": 800,
+            "minValue": 0,
+            "maxValue": 3200,
+            "step": 100,
+            "showValue": true,
+            "showMinMax": true,
+            "units": "RPM",
+            "valueUnits": "RPM",
+            "setValueMethod": "setFanRpm",
+            "getValueMethod": "getValue",
+            "retrieveValueMethod": "rpc",
+            "valueKey": "state",
+            "parseValueFunction": "return data && data.state && data.state.fan_rpm_latest !== undefined ? Number(data.state.fan_rpm_latest) : 800;",
+            "convertValueFunction": "return Math.round(Number(value));",
+            "initialState": {
+              "action": "GET_TIME_SERIES",
+              "defaultValue": 800,
+              "executeRpc": {
+                "method": "getValue",
+                "requestTimeout": 5000,
+                "requestPersistent": false,
+                "persistentPollingInterval": 1000
+              },
+              "getAttribute": {
+                "scope": null,
+                "key": "fan_rpm_latest"
+              },
+              "getTimeSeries": {
+                "key": "fan_rpm_latest"
+              },
+              "getAlarmStatus": {
+                "severityList": null,
+                "typeList": null
+              },
+              "dataToValue": {
+                "type": "NONE",
+                "dataToValueFunction": "return data !== undefined && data !== null ? Math.round(Number(data)) : 800;"
+              }
+            },
+            "valueChange": {
+              "action": "EXECUTE_RPC",
+              "executeRpc": {
+                "method": "setFanRpm",
+                "requestTimeout": 5000,
+                "requestPersistent": false,
+                "persistentPollingInterval": 1000
+              },
+              "setAttribute": {
+                "scope": "SERVER_SCOPE",
+                "key": "fan_rpm"
+              },
+              "putTimeSeries": {
+                "key": "fan_rpm"
+              },
+              "valueToData": {
+                "type": "VALUE",
+                "constantValue": 0,
+                "valueToDataFunction": "return Math.round(Number(value));"
+              }
+            },
+            "disabledState": {
+              "action": "DO_NOTHING",
+              "defaultValue": false,
+              "getAttribute": {
+                "key": "state",
+                "scope": null
+              },
+              "getTimeSeries": {
+                "key": "state"
+              },
+              "getAlarmStatus": {
+                "severityList": null,
+                "typeList": null
+              },
+              "dataToValue": {
+                "type": "CONSTANT",
+                "compareToValue": true,
+                "dataToValueFunction": "return false;"
+              }
+            },
+            "appearance": {
+              "type": "slider",
+              "autoScale": false,
+              "minValueRange": 0,
+              "maxValueRange": 3200,
+              "valueStep": 100,
+              "showValueBox": true,
+              "valueUnits": "RPM",
+              "valueDecimals": 0,
+              "valueFont": {
+                "family": "Roboto",
+                "weight": "600",
+                "style": "normal",
+                "size": 18,
+                "sizeUnit": "px",
+                "lineHeight": "26px"
+              },
+              "valueColor": "#0f172a",
+              "valueBoxBackground": "rgba(37,99,235,0.08)",
+              "showBorder": true,
+              "borderWidth": 1,
+              "borderColor": "#2563eb",
+              "sliderColor": "#2563eb",
+              "trackColor": "#dbeafe"
+            },
+            "background": {
+              "type": "color",
+              "color": "#ffffff",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "12px"
+          },
+          "title": "MANUAL FAN RPM SLIDER",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "actions": {},
+          "widgetCss": "",
+          "noDataDisplayMessage": "",
+          "titleFont": {
+            "size": 16,
+            "sizeUnit": "px",
+            "family": null,
+            "weight": "500",
+            "style": null,
+            "lineHeight": "24px"
+          },
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "pageSize": 1024,
+          "titleIcon": "",
+          "iconColor": "rgba(0,0,0,0.87)",
+          "iconSize": "14px",
+          "configMode": "advanced",
+          "titleColor": "rgba(0,0,0,0.87)",
+          "datasources": [],
+          "borderRadius": null,
+          "targetDevice": {
+            "type": "entity",
+            "entityAliasId": "11111111-1111-1111-1111-111111111111"
+          },
+          "enableDataExport": false
+        },
+        "row": 59,
+        "col": 8,
+        "id": "5f6f5ec9-5f58-4c85-82cb-50352339e969",
+        "typeFullFqn": "system.slider"
+      },
+      "b2494d23-e0a1-4ad3-a0dc-58a600f9da8c": {
+        "type": "rpc",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#166534",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "buttonText": "START MOTOR",
+            "oneWayElseTwoWay": false,
+            "methodName": "startMotor",
+            "methodParams": "true",
+            "requestTimeout": 5000,
+            "showError": true,
+            "requestPersistent": false,
+            "persistentPollingInterval": 1000,
+            "styleButton": {
+              "isRaised": true,
+              "isPrimary": false
+            }
+          },
+          "title": "START MOTOR",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "showLegend": false,
+          "actions": {},
+          "datasources": [],
+          "targetDevice": {
+            "type": "entity",
+            "entityAliasId": "11111111-1111-1111-1111-111111111111"
+          }
+        },
+        "row": 56,
+        "col": 12,
+        "id": "b2494d23-e0a1-4ad3-a0dc-58a600f9da8c",
+        "typeFullFqn": "system.control_widgets.rpcbutton"
+      },
+      "69334b37-c15e-42b9-bce4-792c4a1c5f73": {
+        "type": "rpc",
+        "sizeX": 6,
+        "sizeY": 3,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#991b1b",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "buttonText": "STOP MOTOR",
+            "oneWayElseTwoWay": false,
+            "methodName": "stopMotor",
+            "methodParams": "true",
+            "requestTimeout": 5000,
+            "showError": true,
+            "requestPersistent": false,
+            "persistentPollingInterval": 1000,
+            "styleButton": {
+              "isRaised": true,
+              "isPrimary": false
+            }
+          },
+          "title": "STOP MOTOR",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "showLegend": false,
+          "actions": {},
+          "datasources": [],
+          "targetDevice": {
+            "type": "entity",
+            "entityAliasId": "11111111-1111-1111-1111-111111111111"
+          }
+        },
+        "row": 56,
+        "col": 18,
+        "id": "69334b37-c15e-42b9-bce4-792c4a1c5f73",
+        "typeFullFqn": "system.control_widgets.rpcbutton"
+      },
+      "086913c2-eb64-471a-8210-efdac3adfddb": {
+        "type": "rpc",
+        "sizeX": 8,
+        "sizeY": 3,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#b45309",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "buttonText": "INJECT OVERLOAD L3",
+            "oneWayElseTwoWay": false,
+            "methodName": "injectFault",
+            "methodParams": "{\"fault\":\"overload\",\"level\":3}",
+            "requestTimeout": 5000,
+            "showError": true,
+            "requestPersistent": false,
+            "persistentPollingInterval": 1000,
+            "styleButton": {
+              "isRaised": true,
+              "isPrimary": false
+            }
+          },
+          "title": "INJECT OVERLOAD L3",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "showLegend": false,
+          "actions": {},
+          "datasources": [],
+          "targetDevice": {
+            "type": "entity",
+            "entityAliasId": "11111111-1111-1111-1111-111111111111"
+          }
+        },
+        "row": 62,
+        "col": 0,
+        "id": "086913c2-eb64-471a-8210-efdac3adfddb",
+        "typeFullFqn": "system.control_widgets.rpcbutton"
+      },
+      "06dbf346-06ab-46dc-a1c4-b134a9d31e1c": {
+        "type": "rpc",
+        "sizeX": 8,
+        "sizeY": 3,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#be123c",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "buttonText": "INJECT FAN FAILURE",
+            "oneWayElseTwoWay": false,
+            "methodName": "injectFault",
+            "methodParams": "{\"fault\":\"fan_failure\"}",
+            "requestTimeout": 5000,
+            "showError": true,
+            "requestPersistent": false,
+            "persistentPollingInterval": 1000,
+            "styleButton": {
+              "isRaised": true,
+              "isPrimary": false
+            }
+          },
+          "title": "INJECT FAN FAILURE",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "showLegend": false,
+          "actions": {},
+          "datasources": [],
+          "targetDevice": {
+            "type": "entity",
+            "entityAliasId": "11111111-1111-1111-1111-111111111111"
+          }
+        },
+        "row": 62,
+        "col": 8,
+        "id": "06dbf346-06ab-46dc-a1c4-b134a9d31e1c",
+        "typeFullFqn": "system.control_widgets.rpcbutton"
+      },
+      "4129161a-f9c9-4908-906f-12d348daab91": {
+        "type": "rpc",
+        "sizeX": 8,
+        "sizeY": 3,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#0f766e",
+          "color": "rgba(255,255,255,0.92)",
+          "padding": "0px",
+          "settings": {
+            "buttonText": "CLEAR FAULT",
+            "oneWayElseTwoWay": false,
+            "methodName": "clearFault",
+            "methodParams": "true",
+            "requestTimeout": 5000,
+            "showError": true,
+            "requestPersistent": false,
+            "persistentPollingInterval": 1000,
+            "styleButton": {
+              "isRaised": true,
+              "isPrimary": false
+            }
+          },
+          "title": "CLEAR FAULT",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "showLegend": false,
+          "actions": {},
+          "datasources": [],
+          "targetDevice": {
+            "type": "entity",
+            "entityAliasId": "11111111-1111-1111-1111-111111111111"
+          }
+        },
+        "row": 62,
+        "col": 16,
+        "id": "4129161a-f9c9-4908-906f-12d348daab91",
+        "typeFullFqn": "system.control_widgets.rpcbutton"
+      },
+      "d6422e58-829f-428c-aefe-a397b7b2417d": {
+        "type": "rpc",
+        "sizeX": 24,
+        "sizeY": 7,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": true,
+          "backgroundColor": "#010101",
+          "color": "rgba(255,255,255,0.87)",
+          "padding": "0px",
+          "settings": {
+            "requestTimeout": 30000,
+            "requestPersistent": false
+          },
+          "title": "Manual RPC Console",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {
+            "borderRadius": "14px"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "showLegend": false,
+          "actions": {},
+          "datasources": [],
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": "",
+          "targetDevice": {
+            "type": "entity",
+            "entityAliasId": "11111111-1111-1111-1111-111111111111"
+          }
+        },
+        "row": 65,
+        "col": 0,
+        "id": "d6422e58-829f-428c-aefe-a397b7b2417d",
+        "typeFullFqn": "system.control_widgets.rpc_debug_terminal"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Industrial IoT Motor Control Center",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "0e92609a-90ed-4107-b0ae-e2a8f228e075": {
+                "row": 0,
+                "col": 0,
+                "sizeX": 24,
+                "sizeY": 3
+              },
+              "2d7f18b9-57a2-440f-9894-9bfa25d17b06": {
+                "row": 3,
+                "col": 0,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "19a4b8c7-6ab0-441e-b938-947dcef48b6a": {
+                "row": 3,
+                "col": 6,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "65876d7a-0fbd-4a82-afaf-a66c7feb063d": {
+                "row": 3,
+                "col": 12,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "48a9ee66-dde3-42f2-8d18-511550054fcf": {
+                "row": 3,
+                "col": 18,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "aaa09a38-08b0-4064-ba0d-acbf5e2225d3": {
+                "row": 6,
+                "col": 0,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "44b6d437-24c7-4770-828c-ea7a7b2d92f4": {
+                "row": 6,
+                "col": 6,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "e53fecbe-0f39-4d9e-9040-53919cba0b25": {
+                "row": 9,
+                "col": 0,
+                "sizeX": 8,
+                "sizeY": 8
+              },
+              "78223352-b86c-4ddf-8a89-be33f2bdab4a": {
+                "row": 9,
+                "col": 8,
+                "sizeX": 8,
+                "sizeY": 8
+              },
+              "e870a1d6-a106-490f-8ec5-99eff846b9e8": {
+                "row": 9,
+                "col": 16,
+                "sizeX": 8,
+                "sizeY": 8
+              },
+              "67459251-e541-45f1-ad48-52d3a2bfd16e": {
+                "row": 17,
+                "col": 0,
+                "sizeX": 8,
+                "sizeY": 8
+              },
+              "7995d232-1a53-4d49-9246-189ecb892e49": {
+                "row": 17,
+                "col": 8,
+                "sizeX": 8,
+                "sizeY": 8
+              },
+              "375bb360-6818-4fdb-8d01-58879ba8fdc3": {
+                "row": 25,
+                "col": 0,
+                "sizeX": 12,
+                "sizeY": 8
+              },
+              "7ce06afb-3528-4c2c-8f0b-2867e27a6046": {
+                "row": 25,
+                "col": 12,
+                "sizeX": 12,
+                "sizeY": 8
+              },
+              "66d7659b-2448-471c-af61-f186ca1866dd": {
+                "row": 33,
+                "col": 0,
+                "sizeX": 12,
+                "sizeY": 8
+              },
+              "c94fd9d5-70d5-4975-acb8-75d9bb213378": {
+                "row": 33,
+                "col": 12,
+                "sizeX": 12,
+                "sizeY": 8
+              },
+              "8c223646-25dc-4825-9b15-398f1e4e9e0f": {
+                "row": 41,
+                "col": 0,
+                "sizeX": 24,
+                "sizeY": 8
+              },
+              "bbbacc79-d5ea-4416-ac72-cd014d06c8c1": {
+                "row": 49,
+                "col": 0,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "e704b06c-2d18-480a-b371-a7c344ac9b7d": {
+                "row": 49,
+                "col": 6,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "b8b9112a-2a0b-479a-afa3-f8f2cdd24ea2": {
+                "row": 49,
+                "col": 12,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "dec9a7e0-5262-4857-bd06-9e112b4a8100": {
+                "row": 49,
+                "col": 18,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "a0884a37-6f86-4933-baf7-34cfaa2fcaa8": {
+                "row": 6,
+                "col": 18,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "1cc03663-4d29-4b5d-9ce4-d6bf8a2f1f60": {
+                "row": 6,
+                "col": 12,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "c7bff6ca-6af4-4e93-9640-6c02cf7ebf86": {
+                "row": 17,
+                "col": 16,
+                "sizeX": 8,
+                "sizeY": 8
+              },
+              "96e066c3-6119-4f5d-9ba7-4684c5133952": {
+                "row": 52,
+                "col": 0,
+                "sizeX": 24,
+                "sizeY": 4
+              },
+              "b461c660-f51e-46c6-8cb9-59594fac0d9d": {
+                "row": 56,
+                "col": 0,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "a3b84359-97a9-4a9b-b22b-95843c2a2648": {
+                "row": 56,
+                "col": 6,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "e1f6ed5d-a791-4b5e-ad71-347a64c794d0": {
+                "row": 59,
+                "col": 0,
+                "sizeX": 8,
+                "sizeY": 3
+              },
+              "5f6f5ec9-5f58-4c85-82cb-50352339e969": {
+                "row": 59,
+                "col": 8,
+                "sizeX": 16,
+                "sizeY": 3
+              },
+              "b2494d23-e0a1-4ad3-a0dc-58a600f9da8c": {
+                "row": 56,
+                "col": 12,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "69334b37-c15e-42b9-bce4-792c4a1c5f73": {
+                "row": 56,
+                "col": 18,
+                "sizeX": 6,
+                "sizeY": 3
+              },
+              "086913c2-eb64-471a-8210-efdac3adfddb": {
+                "row": 62,
+                "col": 0,
+                "sizeX": 8,
+                "sizeY": 3
+              },
+              "06dbf346-06ab-46dc-a1c4-b134a9d31e1c": {
+                "row": 62,
+                "col": 8,
+                "sizeX": 8,
+                "sizeY": 3
+              },
+              "4129161a-f9c9-4908-906f-12d348daab91": {
+                "row": 62,
+                "col": 16,
+                "sizeX": 8,
+                "sizeY": 3
+              },
+              "d6422e58-829f-428c-aefe-a397b7b2417d": {
+                "row": 65,
+                "col": 0,
+                "sizeX": 24,
+                "sizeY": 7
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#e5e7eb",
+              "columns": 24,
+              "margin": 12,
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": false,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 80,
+              "rowHeight": 72,
+              "outerMargin": true,
+              "layoutType": "default"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "11111111-1111-1111-1111-111111111111": {
+        "id": "11111111-1111-1111-1111-111111111111",
+        "alias": "Motor",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "cf4e45a0-64a9-11f1-8a4e-494e723709c6"
+          }
+        }
+      }
+    },
+    "deviceAliases": {
+      "1": {
+        "alias": "Industrial Motor 01",
+        "deviceId": "{DEVICE_ID}"
+      }
+    },
+    "filters": {},
+    "timewindow": {
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "timewindowMs": 600000
+      },
+      "aggregation": {
+        "type": "NONE",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "resources": []
+}
